@@ -10,10 +10,10 @@ class RoomsController < ApplicationController
     render :json => room
   end 
 
-  def edit
-    room = Room.find(params[:id])
-    render :json => room
-  end 
+  # def edit
+  #   room = Room.find(params[:id])
+  #   render :json => room
+  # end 
 
   def update
     room = Room.find(params[:id])
