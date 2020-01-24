@@ -12,13 +12,13 @@ class IssuesController < ApplicationController
 
     def update
         issue = Issue.find(params[:id])
-        issue.update(issue)
+        issue.update(issue_params)
         render :json => issue
     end 
     
     private
     
-    def issue
+    def issue_params
         params.require(:issue).permit(:description, :status, :date, :room_id)
     end
     
