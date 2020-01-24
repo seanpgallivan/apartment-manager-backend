@@ -10,9 +10,16 @@ class CommentsController < ApplicationController
         render :json => comment
     end
 
+    def update
+        comment = Comment.find(params[:id])
+        comment.update(comment_params)
+        render :json => comment
+    end
+
     def destroy
         comment = Comment.find(params[:id])
         comment.destroy
+        render :json => {status: 'deleted'}
     end
     
     private

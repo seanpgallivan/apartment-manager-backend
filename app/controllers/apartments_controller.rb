@@ -9,16 +9,6 @@ class ApartmentsController < ApplicationController
         apartment = Apartment.find(params[:id])
         render :json => apartment
     end
-
-    def create
-        apartment = Apartment.create(apartment_params)
-        render :json => apartment
-    end
-    
-    def destroy
-        apartment = Apartment.find(params[:id])
-        apartment.destroy
-    end
           
     private
     
